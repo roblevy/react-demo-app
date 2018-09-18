@@ -36,6 +36,8 @@ In order for you to connect your locally cloned fork to the original repository 
 
 Let's go and grab the SSH for that original repository.
 
+
+
 <img width="1000" alt="screen shot 2017-03-21 at 13 38 37" src="https://cloud.githubusercontent.com/assets/40461/24154496/3ffcdfc6-0e49-11e7-9978-3bf852bd7bd8.png">
 
 Now make sure that you're in your locally cloned fork of your classwork and type:
@@ -54,7 +56,8 @@ The structure of this code will look like this:
 .
 ├── README.md
 └── example-lesson
-   └── code.txt
+   └── my-code 
+       └── code.txt
 ```
 
 In order to fetch this new code, you will need to run:
@@ -76,4 +79,19 @@ You should commit regularly and push as you would with any other project.
 git add .
 git commit -m "Finished example lesson"
 git push origin master
+```
+
+## Fetching 'solution' code
+At the end of some days, we will add some kind of 'solution code' here so that you have a reference of a 'best practice' way of solving the day's challenges.
+
+The structure of this code will look like this:
+
+```
+.
+├── README.md
+└── example-lesson
+   └── my-code 
+       └── code.txt
+   └── solution-code 
+       └── code.txt
 ```
