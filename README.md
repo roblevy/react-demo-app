@@ -66,7 +66,7 @@ In order to fetch this new code, you will need to run:
 git pull upstream master
 ```
 
-You can now work in this `starter-code` directory.
+You can now work in this `my-code` directory.
 
 
 ## Backing up your work
