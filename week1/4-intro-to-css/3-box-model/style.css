@@ -1,0 +1,39 @@
+div {
+  background-color: salmon;
+  color: white;
+  font-size: 25px;
+  padding: 10px;
+  border: solid red 3px;
+  margin: 5px;
+  display: block;
+  height: 80px;
+  width: 80px;
+}
+
+/* .b {
+  margin: -40px 0 0 160px;
+  height: 160px;
+} */
+
+.a {
+  margin: 0;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+}
+
+.b {
+  margin: 0;
+  height: 160px;
+  position: absolute;
+  top: 80px;
+  left: 250px;
+}
+
+.c {
+  background-color: dodgerblue;
+  position: static;
+  height: 300px;
+  width: 500px;
+  margin-top: 100px;
+}

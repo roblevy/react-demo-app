@@ -7,7 +7,12 @@
 /* Make "A red h2!" red, but nothing else */
 
 /* Put a border around the table header */
-
+table {
+  border-collapse: collapse;
+}
+thead {
+  border: solid black 10px;
+}
 /* Make 'some wrapped content' and 'and more' smaller */
 
 /* Make the first row of the table bold */
