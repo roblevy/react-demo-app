@@ -6,8 +6,12 @@
 
 /* Make "A red h2!" red, but nothing else */
 
+/* Put a border around the table header */
+
 /* Make 'some wrapped content' and 'and more' smaller */
 
 /* Make the first row of the table bold */
 
 /* Put a line after each table row, except the bottom one (use border-bottom) */
+
+/* BONUS TASK: Give every other table row a grey background */
