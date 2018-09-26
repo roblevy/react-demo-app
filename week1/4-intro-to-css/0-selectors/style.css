@@ -1,0 +1,37 @@
+li {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.pink {
+  color: pink;
+}
+
+h1 {
+  color: blue;
+}
+
+#the-first {
+  opacity: 0.2;
+}
+
+/* Any div with a class of 'top' */
+div.top {
+  color: red;
+}
+
+p.top {
+  color: red;
+}
+
+span,p.top {
+  font-size: 25px;
+}
+
+/* child selector */
+div.top > div.second {
+  text-decoration: underline;
+}
