@@ -1,0 +1,175 @@
+
+body{
+  font-family: helvetica;
+}
+
+
+
+nav{
+  background-color: black;
+  height: 50px;
+  vertical-align: middle;
+  line-height: 50px;
+}
+
+ul{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+li{
+  padding: 0px 50px;
+  color: white;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+ul h1{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+#home{
+  background-image: url("../images/dog.jpg");
+  background-size: cover;
+  /* background-color: skyblue; */
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#home h1{
+  font-size: 120px;
+  font-weight: bold;
+  color: white;
+  padding-bottom: 50px;
+}
+
+#home h2 {
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+
+}
+
+.download{
+  display: flex;
+  justify-content: center;
+}
+
+.download img{
+  height: 150px;
+  padding: 100px 30px;
+}
+
+
+
+#contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgrey;
+  height: 350px;
+}
+
+
+form{
+  display: flex;
+  flex-direction: column;
+
+  width: 700px;
+}
+ input[type=submit]{
+  background-color: skyblue;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#contact h3{
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 50px;
+}
+
+#name,#email,#message{
+  padding-top: 10px;
+  margin: 10px 0;
+}
+
+
+
+
+@media (max-width:890px) {
+  .download{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download img{
+    /* padding: 30px 50px; */
+    padding: 20px 0;
+    width: 50%;
+  }
+
+  #home {
+    height: 350px;
+  }
+
+  #home h1{
+    font-size: 80px;
+  }
+
+  #home h2 {
+    font-size: 40px;
+  }
+
+
+  form{
+    width: 500px;
+  }
+}
+
+
+@media (max-width:605px) {
+  li{
+    padding: 0 25px;
+  }
+  #home{
+    align-items: flex-start;
+    height: 200px;
+  }
+
+  #home h1{
+    font-size: 50px;
+    padding-left: 20px;
+  }
+
+  #home h2{
+    font-size: 20px;
+    padding-left: 20px;
+
+  }
+
+  .download{
+    flex-direction: row;
+  }
+
+  .download img{
+    padding: 0;
+  }
+
+  form{
+    width: 300px;
+  }
+
+}
