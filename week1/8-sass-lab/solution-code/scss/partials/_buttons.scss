@@ -1,0 +1,16 @@
+button {
+  font-family: $font-default;
+  font-size: 20px;
+  text-transform: uppercase;
+  background: none;
+  color: $body-color;
+  border-radius: 3px;
+  font-weight: 400;
+  padding: 8px 50px;
+  margin: 15px;
+  cursor: pointer;
+  transition: box-shadow 2s;
+  &:hover {
+    @include btn-hover-mixin($btn-hover);
+  }
+}
