@@ -1,0 +1,10 @@
+main {
+  div {
+    .big {
+      font-size: 35px;
+    }
+  }
+  .gallery {
+    @extend %column;
+  }
+}

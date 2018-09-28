@@ -1,0 +1,14 @@
+nav {
+  display: flex;
+  justify-content: $start;
+  ul {
+    margin: 10px;
+    li {
+      color: red;
+      a {
+        color: green;
+        text-decoration: none;
+      }
+    }
+  }
+}

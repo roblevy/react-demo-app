@@ -1,0 +1,15 @@
+$light: #fde;
+$start: flex-start;
+
+%column {
+  display: flex;
+  flex-direction: column;
+}
+
+// NOTE: Don't need the underscore!!!
+@import 'partials/nav';
+@import 'partials/main';
+
+body {
+  background-color: $light;
+}

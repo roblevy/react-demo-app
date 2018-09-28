@@ -1,0 +1,22 @@
+main .gallery {
+  display: flex;
+  flex-direction: column; }
+
+nav {
+  display: flex;
+  justify-content: flex-start; }
+  nav ul {
+    margin: 10px; }
+    nav ul li {
+      color: red; }
+      nav ul li a {
+        color: green;
+        text-decoration: none; }
+
+main div .big {
+  font-size: 35px; }
+
+body {
+  background-color: #fde; }
+
+/*# sourceMappingURL=style.css.map */
