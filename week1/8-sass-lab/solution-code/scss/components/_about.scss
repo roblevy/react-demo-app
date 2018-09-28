@@ -1,0 +1,32 @@
+section.about {
+  border-top: 5px solid darken($about-and-contact-background-color, 2%);
+  aside {
+    padding: 35px;
+    height: inherit;
+    width: 50%;
+    float: left;
+    background: $about-and-contact-background-color;
+    text-align: left;
+    h3 {
+      font-size: 35px;
+      font-weight: 400;
+    }
+    p {
+      margin: 10px 0;
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 300;
+      text-align: justify;
+    }
+    button.default {
+      border: 2px solid lighten($body-color, 60%);
+    }
+  }
+  div {
+    padding: 25px;
+    height: inherit;
+    width: 50%;
+    float: right;
+    background: $about-and-contact-background-color;
+  }
+}
