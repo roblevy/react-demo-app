@@ -13,5 +13,8 @@
 // Boolean    |
 // null       |
 // undefined  |
-//
 // NOTE: typeof(null) is 'object'! How can you test for null?
+var a = 1;
+var b = 1;
+var c = a + b;
+console.log('c is of type', typeof(c));
