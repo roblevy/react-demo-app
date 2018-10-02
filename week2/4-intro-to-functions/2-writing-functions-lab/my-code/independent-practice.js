@@ -30,9 +30,11 @@ console.log(secondResult);
 // This should show [3, 5, 7] in the console.
 function getLengths(inputArray) {
   const lengths = [];
-  // Now use a loop and Array.push...
+  // Now use a for loop and with Array.push inside it
 }
 
 // 4.  Write a function `wordReverse` that accepts a single argument, a string.
 // The method should return a string with the order of the words reversed. Don't worry
 // about punctuation.
+// For example, 'my breakfast tasted great' => 'great tasted breakfast my'
+// HINT: You will need String.split and Array.join
