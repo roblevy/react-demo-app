@@ -6,6 +6,8 @@ function handleButtonClick(event) {
   const button = event.target;
   // Set the text content to the old content plus the button
   display.textContent += button.textContent;
+  const audio = document.getElementById('sound');
+  audio.play();
 }
 
 const allButtons = document.querySelectorAll('.buttons .button-row div');
