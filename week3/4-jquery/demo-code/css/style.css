@@ -1,0 +1,91 @@
+body {
+  background-color: #454545;
+  font-family: 'Swanky and Moo Moo', cursive;
+}
+
+h1 {
+  color: #aaaaff;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.message {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.options-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.option {
+  text-transform: capitalize;
+  color: #ccffcc;
+  cursor: pointer;
+  font-size: 2.5rem;
+  border: 3px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+.option:hover{
+  background-color: #aaaaff;
+  color: white;
+  border: 3px solid #aaaaff;
+  font-size: 2.7rem;
+  padding: 0.3rem 0.8rem;
+  transition: .1s;
+}
+
+.disabled {
+  background-color: #ababab;
+  color: white;
+  border: 3px solid #ababab;
+}
+
+.disabled:hover {
+  background-color: #ababab;
+  color: white;
+  border: 3px solid #ababab;
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
+  cursor: default;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.show-choice {
+  background-color: #aaaaff;
+  border-radius: 30px;
+  width: 40vw;
+  height: 8vh;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+.reset {
+  font-family: 'Swanky and Moo Moo', cursive;
+  background-color: #ccffcc;
+  border: none;
+  border-radius: 30px;
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.reset:hover {
+  background-color: #aaaaff;
+  color: #ffffff;
+  transition: .1s;
+}
