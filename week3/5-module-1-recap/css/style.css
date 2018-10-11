@@ -1,0 +1,13 @@
+.container {
+  margin: 0 auto; }
+  .container .grid .grid-square {
+    height: 60px;
+    width: 60px;
+    border: 1px solid black; }
+    .container .grid .grid-square p {
+      color: blue; }
+
+body {
+  font-family: sans-serif; }
+
+/*# sourceMappingURL=style.css.map */

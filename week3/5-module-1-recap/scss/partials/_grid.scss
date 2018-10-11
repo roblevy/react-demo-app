@@ -1,0 +1,17 @@
+// A SASS Variable
+$grid-size: 60px;
+
+// SASS can be nested
+.container {
+  margin: 0 auto;
+  .grid {
+    .grid-square {
+      height: $grid-size;
+      width: $grid-size;
+      border: 1px solid black;
+      p {
+          color: blue;
+      }
+    }
+  }
+}
