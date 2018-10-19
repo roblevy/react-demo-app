@@ -12,8 +12,8 @@ const jams = [
 ];
 
 app.get('*', (req, res, next) => {
-  console.log('Incoming request', req.url, req.method);
-  next()
+  console.log('Incoming request', req.method, req.url);
+  next();
 });
 
 app.get('/', (req, res) => {
@@ -22,16 +22,12 @@ app.get('/', (req, res) => {
 
 app.get('/jams', (req, res) => {
   res.send(`
-    <html>
-      <body>
-        <h1>All the jams</h1>
-        <ul>
-        ${jams.map(jam => {
-          return `<li><a href='/jams/${jam.id}'>${jam.name}</a></li>`;
-        }).join('')}
-        </ul>
-      </body>
-    </html>
+    <h1>All the jams</h1>
+    <ul>
+    ${jams.map(jam => {
+      return `<li><a href='/jams/${jam.id}'>${jam.name}</a></li>`;
+    }).join('')}
+    </ul>
   `);
 });
 
@@ -39,12 +35,8 @@ app.get('/jams/:id', (req, res) => {
   console.log(req.params);
   const jam = jams.filter(jam => jam.id === req.params.id)[0];
   res.send(`
-      <html>
-        <body>
-          <h1>A Jam</h1>
-          ${jam.name}
-        </body>
-      </html>
+      <h1>A Jam</h1>
+      ${jam.name}
     `);
 });
 
