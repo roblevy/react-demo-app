@@ -23,7 +23,7 @@ app.get('/jams', (req, res) => {
         <ul>
         ${jams.map(jam => {
           return `<li><a href='/jams/${jam.id}'>${jam.name}</a></li>`;
-        })}
+        }).join('')}
         </ul>
       </body>
     </html>
