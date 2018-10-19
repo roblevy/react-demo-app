@@ -8,6 +8,8 @@ In response to a GET request to 'localhost:4000/about' it should display a simpl
 
 'localhost:4000/data' should return a ul with a set of li's each of which are decided by the values in an array.
 
+## Bonus task
+
 e.g. ['banana', 'grape', 'peach']
 ```
 <ul>
@@ -16,4 +18,3 @@ e.g. ['banana', 'grape', 'peach']
   <li>peach</li>
 </ul>
 ```
-
