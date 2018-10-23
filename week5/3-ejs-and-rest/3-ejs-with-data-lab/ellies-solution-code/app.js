@@ -10,6 +10,11 @@ const expressLayouts = require('express-ejs-layouts');
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
+app.use('*', function(req, res, next) {
+  console.log('Incoming request:', req.method, req.url);
+  next();
+});
+
 app.get('/', function(req, res) {
   res.render('pages/home', {});
 });
@@ -27,6 +32,7 @@ app.get('/puppies/:id', function(req, res) {
   console.log('The puppy is', puppy);
   res.render('puppies/show', {puppy});
 });
+
 
 
 app.listen(port, () => console.log(`Listening for changes on port ${port}`));
