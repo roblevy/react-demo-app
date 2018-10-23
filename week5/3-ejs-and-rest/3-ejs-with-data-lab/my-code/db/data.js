@@ -28,3 +28,7 @@ const puppies = [
     img: 'https://i.pinimg.com/564x/95/37/6e/95376ea928e0ae036dcebe11a1ee9ff7.jpg'
   }
 ];
+
+module.exports = {
+  puppies: puppies
+};

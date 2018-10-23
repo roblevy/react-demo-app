@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cocktails with EJS</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+      h1 {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Our first EJS page</h1>
+    <p>This will have some dynamic data innit!</p>
+    <p>This is javascript: 7 times 8 is <%= 7 * 8 %></p>
+    <ul>
+      <% cocktails.forEach(cocktail => {%>
+        <li><%= cocktail.name %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
