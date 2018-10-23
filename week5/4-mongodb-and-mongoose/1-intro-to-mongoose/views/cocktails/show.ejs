@@ -1,0 +1,9 @@
+<main>
+  <h1><%= name %></h1>
+  <p>Ingredients:
+    <% ingredients.forEach(ingredient => { %>
+      <span class="tag"><%= ingredient %></span>
+      <% }) %>
+  </p>
+  <img src="<%= image %>"/>
+</main>
