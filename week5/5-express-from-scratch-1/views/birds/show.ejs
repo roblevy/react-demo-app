@@ -1,0 +1,7 @@
+<h1>The birds show page</h1>
+<p><%= name %></p>
+<p><%= flightDistance %></p>
+<a href="/birds/<%= _id %>/edit">Edit this bird</a>
+<form class="" action="/birds/<%= _id %>?_method=DELETE" method="post">
+  <button>Delete this bird</button>
+</form>
