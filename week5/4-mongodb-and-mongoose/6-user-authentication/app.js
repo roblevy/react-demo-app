@@ -2,6 +2,11 @@ const express = require('express'); // Access the express package
 const expressLayouts = require('express-ejs-layouts'); // Access EJS from Express
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+
+// Express session
+const session = require('express-session');
+app.use(session({ secret: 'shh...', resave: false, saveUninitialized: false }));
+
 const mongoose = require('mongoose');
 const env = require('./config/environment');
 const router = require('./config/routes');
