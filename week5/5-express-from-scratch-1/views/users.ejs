@@ -1,0 +1,6 @@
+<% users.forEach(user => { %>
+ <p><%= user.username %></p>
+ <% user.birdsCreated.forEach(bird => { %>
+    <%= bird.name %>
+  <% }) %>
+<% }) %>

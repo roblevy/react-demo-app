@@ -19,6 +19,7 @@ app.use(methodOverride('_method'));
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/birdface');
 const Bird = require('./models/bird');
+const User = require('./models/user');
 
 app.get('/', function(req, res) {
   res.render('home');
@@ -50,6 +51,10 @@ app.get('/birds/:birdId', function(req, res) {
     });
 });
 
+app.get('/users', function(req, res) {
+  User.find().populate('birdsCreated')
+    .then(users => res.render('users', { users }));
+})
 
 // CREATE route
 app.post('/birds', function(req, res) {

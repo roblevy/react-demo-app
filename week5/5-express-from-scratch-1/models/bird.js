@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const birdSchema = mongoose.Schema({
+  user: { type: mongoose.Schema.ObjectId, ref: 'User' },
   name: String,
   flightDistance: Number
 });
