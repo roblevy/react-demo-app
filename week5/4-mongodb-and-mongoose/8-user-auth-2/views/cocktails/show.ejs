@@ -6,10 +6,12 @@
       <% }) %>
   </p>
   <img class="show-image" src="<%= image %>"/>
-  <div class="buttons">
+  <% if (locals.isLoggedIn) { %>
+    <div class="buttons">
     <form action="/cocktails/<%= _id %>?_method=DELETE" method="post">
-      <button class="button">Delete</button>
+    <button class="button">Delete</button>
     </form>
     <a class="button" href="/cocktails/<%= _id %>/edit">Edit</a>
-  </div>
+    </div>
+  <% } %>
 </main>

@@ -13,7 +13,12 @@
           <li><a href="/">Home</a></li>
           <li><a href="/cocktails/new">Create a cocktail</a></li>
           <li><a href="/cocktails">All the cocktails</a></li>
-          <li><a href="/register">Sign up for more action</a></li>
+          <% if (locals.isLoggedIn) { %>
+            <li><a href="/logout">Log out <%= locals.currentUser.username %></a></li>
+          <% } else { %>
+            <li><a href="/login">Log in</a></li>
+            <li><a href="/register">Sign up for more action</a></li>
+          <% } %>
         </ul>
       </nav>
     </header>

@@ -44,9 +44,17 @@ function loginRoute(req, res) {
   // Otherwise redirect to login form
 }
 
+function logoutRoute(req, res) {
+  // Clear the data in the current session
+  req.session.regenerate(function() {
+    res.redirect('/');
+  });
+}
+
 module.exports = {
   registerFormRoute: registerFormRoute,
   registerRoute: registerRoute,
   loginFormRoute: loginFormRoute,
-  loginRoute: loginRoute
+  loginRoute: loginRoute,
+  logoutRoute: logoutRoute
 };
