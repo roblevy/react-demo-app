@@ -15,6 +15,10 @@ img {
   width: 300px;
 }
 
+.navbar .navbar-item>a {
+  color: white;
+}
+
 .hero {
   height: 70vh;
 }
