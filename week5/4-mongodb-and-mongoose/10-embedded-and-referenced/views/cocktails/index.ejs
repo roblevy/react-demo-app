@@ -1,0 +1,13 @@
+<main>
+  <h1>All the cocktails</h1>
+  <div class="cocktail-grid">
+    <% cocktails.forEach(cocktail => {%>
+      <div>
+      <a href="/cocktails/<%= cocktail.id %>">
+      <img width="200px" height="200px" src="<%= cocktail.image %>" />
+      <h3><%= cocktail.name %></h3>
+      </a>
+      </div>
+      <% }) %>
+    </div>
+</main>
