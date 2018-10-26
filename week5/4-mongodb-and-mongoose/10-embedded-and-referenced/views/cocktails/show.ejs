@@ -21,6 +21,11 @@
         </div>
         <div>
           <span><%= rating.comment %></span>
+          <span>
+            <form method="POST" action="/cocktails/<%= _id %>/ratings/<%= rating._id %>?_method=DELETE">
+              <button>x</button>
+            </form>
+          </span>
         </div>
       <% }) %>
     </div>

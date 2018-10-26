@@ -49,4 +49,8 @@ router.delete('/cocktails/:id', secureRoute, cocktailController.deleteRoute);
 // Rating CREATE route
 router.post('/cocktails/:cocktailId/ratings', secureRoute, ratingController.createRoute);
 
+// Rating DELETE route
+router.delete('/cocktails/:cocktailId/ratings/:ratingId', secureRoute,
+  ratingController.deleteRoute);
+
 module.exports = router;
