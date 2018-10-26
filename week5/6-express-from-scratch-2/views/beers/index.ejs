@@ -1,0 +1,4 @@
+<h1>The beer index</h1>
+<% beers.forEach(beer => { %>
+  <p><a href="/beers/<%= beer._id %>"><%= beer.name %> (£ <%= beer.price %>)</a></p>
+<% }) %>
