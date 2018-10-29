@@ -5,9 +5,10 @@ const puppySchema = mongoose.Schema({
   countryOfOrigin: String,
   colors: [String],
   img: String,
+  addedBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
   comments: [{
     rating: { type: Number, min: 1, max: 10 },
-    user: { type: String, required: true },
+    user: { type: mongoose.Schema.ObjectId, ref: 'User' },
     content: { type: String }
   }]
 });

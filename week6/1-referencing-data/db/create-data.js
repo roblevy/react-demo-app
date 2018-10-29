@@ -3,8 +3,10 @@ const environment = require('../config/environment');
 mongoose.connect(environment.dbUri);
 
 const Puppy = require('../models/puppy');
+const User = require('../models/user');
 
 Puppy.collection.drop();
+User.collection.drop();
 
 const puppyData = [
   {

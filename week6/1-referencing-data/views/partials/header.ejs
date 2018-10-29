@@ -9,6 +9,7 @@
 
       <% if(locals.isLoggedIn) { %>
         <li class="navbar-item"><a href="/puppies/new">Add a Puppy</a></li>
+        <li class="navbar-item"><a href="/user/<%= locals.currentUser.id %>">My Profile</a></li>
         <li class="navbar-item"><a href="/logout">Log Out <%= locals.currentUser.username %></a></li>
       <% } else { %>
         <li class="navbar-item"><a href="/login">Log In</a></li>

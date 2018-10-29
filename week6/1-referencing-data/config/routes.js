@@ -1,6 +1,7 @@
 const puppyController = require('../controllers/puppyController');
 const commentsController = require('../controllers/commentsController');
 const authController = require('../controllers/authController');
+const userController = require('../controllers/userController');
 const router = require('express').Router();
 
 router.get('/', function(req, res) {
@@ -39,5 +40,8 @@ router.route('/login')
 
 router.route('/logout')
   .get(authController.logoutRoute);
+
+router.route('/user/:id')
+  .get(userController.show);
 
 module.exports = router;

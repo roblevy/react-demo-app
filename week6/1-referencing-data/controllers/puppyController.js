@@ -18,7 +18,11 @@ function indexRoute(req, res, next) {
 function showRoute(req, res, next) {
   Puppy
     .findById(req.params.id)
-    .then(puppy => res.render('puppies/show', puppy))
+    .populate('comments.user addedBy')
+    .then(puppy => {
+      console.log(puppy);
+      res.render('puppies/show', puppy);
+    })
     .catch(err => {
       console.log('There was an error', err);
       next();
@@ -32,7 +36,6 @@ function newRoute(req, res, next) {
 
 function createRoute(req, res, next) {
   req.body.colors = req.body.colors.split(',');
-  // TODO: check this ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   Puppy
     .create(req.body)
     .then(puppy => res.redirect(`/puppies/${puppy._id}`))
