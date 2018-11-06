@@ -46,6 +46,25 @@ function Router($stateProvider) {
           }).then(result => $state.go('fishesIndex'));
         };
       }
+    })
+    .state('fishesEdit', {
+      templateUrl: './views/fishes/edit.html',
+      url: '/fishes/:id/edit',
+      controller: function($scope, $state, $http) {
+        // Fetch the fish to populate the form
+        $http({
+          method: 'GET',
+          url: `/api/fishes/${$state.params.id}`
+        }).then(result => $scope.fish = result.data);
+        $scope.handleSubmit = function() {
+          // Here we request the UPDATE route:
+          $http({
+            method: 'PUT',
+            url: `/api/fishes/${$state.params.id}`,
+            data: $scope.fish
+          }).then(result => $state.go('fishesIndex'));
+        };
+      }
     });
 }
 
