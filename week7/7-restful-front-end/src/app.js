@@ -31,6 +31,12 @@ function Router($stateProvider) {
         }).then(result => {
           $scope.fish = result.data;
         });
+        $scope.handleDelete = function() {
+          $http({
+            method: 'DELETE',
+            url: `/api/fishes/${$scope.fish._id}`
+          }).then(() => $state.go('fishesIndex'));
+        };
       }
     })
     .state('fishesNew', {
