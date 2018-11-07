@@ -1,7 +1,14 @@
 <h1 class="title is-1">All the fish, all the time</h1>
 <section>
+  <form ng-submit="handleFilterSubmit()">
+    <input type="text" class="input" ng-model="searchTerm">
+    <!-- $scope.searchTerm is what the user types into this input -->
+    <button class="button">🔎</button>
+  </form>
+  <hr>
   <div class="columns is-multiline">
-    <div ng-repeat="fish in fishes" class="column is-4">
+    <!-- Don't show every fish, just the filtered ones! -->
+    <div ng-repeat="fish in filteredFishes" class="column is-4">
       <a ui-sref="fishesShow({ id: fish._id })">
         <div class="card">
           <div class="card-header">
