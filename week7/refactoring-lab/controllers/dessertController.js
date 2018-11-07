@@ -11,15 +11,27 @@ function showRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
-
+  Dessert
+    .create(req.body)
+    .then(dessert => res.json(dessert))
+    .catch(next);
 }
 
 function updateRoute(req, res, next) {
-
+  Dessert
+    .findById(req.params.id)
+    .then(dessert => dessert.set(req.body))
+    .then(dessert => dessert.save())
+    .then(dessert => res.json(dessert))
+    .catch(next);
 }
 
 function deleteRoute(req, res, next) {
-
+  Dessert
+    .findById(req.params.id)
+    .then(dessert => dessert.remove())
+    .then(() => res.sendStatus(204))
+    .catch(next);
 }
 
 module.exports = {

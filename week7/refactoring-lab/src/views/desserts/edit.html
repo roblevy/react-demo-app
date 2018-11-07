@@ -1,0 +1,20 @@
+<h2 class="title is-2">Edit the Dessert</h2>
+<form ng-submit="handleSubmit()">
+  <div class="field">
+    <label class="label" for="name">Name</label>
+    <input class="input" type="text" name="name" ng-model="dessert.name">
+  </div>
+
+  <div class="field">
+    <label class="label" for="countryOfOrigin">Country of Origin</label>
+    <input class="input" type="text" name="countryOfOrigin" ng-model="dessert.countryOfOrigin">
+  </div>
+
+  <div class="field">
+    <label class="label" for="imageUrl">Image</label>
+    <input class="input" type="text" name="imageUrl" ng-model="dessert.imageUrl">
+  </div>
+
+  <button class="button is-rounded is-danger">Edit</button>
+
+</form>
