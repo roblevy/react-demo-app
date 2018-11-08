@@ -19,7 +19,7 @@ function login(req, res, next) {
           token: token
         });
       } else {
-        res.json({
+        res.status(401).json({
           message: 'Not this time mateyboy'
         });
       }

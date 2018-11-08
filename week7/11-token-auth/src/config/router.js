@@ -1,10 +1,16 @@
 import fishesIndexCtrl from '../controllers/fishes/indexCtrl';
+import loginCtrl from '../controllers/loginCtrl';
 
 function Router($stateProvider) {
   $stateProvider
     .state('home', {
       templateUrl: './views/home.html',
       url: '/'
+    })
+    .state('login', {
+      templateUrl: './views/login.html',
+      url: '/login',
+      controller: loginCtrl
     })
     .state('fishesIndex', {
       templateUrl: './views/fishes/index.html',

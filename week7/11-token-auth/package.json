@@ -21,7 +21,8 @@
     "mongoose-unique-validator": "^2.0.0",
     "morgan": "^1.9.1",
     "request": "^2.85.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "satellizer": "^0.15.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
