@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const env = require('../config/environment');
 
 function login(req, res, next) {
   User.findOne({ email: req.body.email })
@@ -11,9 +12,9 @@ function login(req, res, next) {
         // Create a token: jwt.sign
         // Three arguments: data to encrypt, secret, options
         const token = jwt.sign({
-          magicRoundabout: 'zebedee',
-          zoobedoobee: 'erttyop'
-        }, 'blues brothers', {});
+          username: user.username,
+          sub: user._id // jwt insists on sub here, short for 'subject'
+        }, env.secret, { expiresIn: '24h' });
         res.json({
           message: `Welcome back ${user.username}`,
           token: token

@@ -1,5 +1,4 @@
 const Fish = require('../models/fish');
-const jwt = require('jsonwebtoken');
 
 function indexRoute(req, res, next) {
   Fish.find().then(fishes => res.json(fishes))
@@ -12,25 +11,10 @@ function showRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
-  console.log('These are the headers of the request', req.headers);
-  // Remove the Bearer bit from the start of the header:
-  const token = req.headers.authorization.replace('Bearer ', '');
-  // Check the token matches our secret with jwt.verify.
-  // 3 arguments: token, secret, callback function which runs if
-  // the token checks out
-  jwt.verify(token, 'blues brothers', function(err, data) {
-    // If err is undefined, we know the token checked out.
-    // Otherwise it was bad.
-    if (err) {
-      // The token was bad
-      res.status(401).json({ message: 'Unauthorised!' });
-    } else {
-      Fish.create(req.body)
-        .then(fish => res.json({fish, data}))
-        // Hand on any errors to the error handler
-        .catch(next);
-    }
-  });
+  Fish.create(req.body)
+    .then(fish => res.json(fish))
+    // Hand on any errors to the error handler
+    .catch(next);
 }
 
 function updateRoute(req, res, next) {

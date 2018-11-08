@@ -1,4 +1,4 @@
-function indexCtrl($scope, $http) {
+function indexCtrl($scope, $http, $auth) {
   $http({
     method: 'GET',
     url: '/api/fishes'
@@ -9,6 +9,7 @@ function indexCtrl($scope, $http) {
     // the user has entered a search term
     $scope.filteredFishes = $scope.allFishes;
   });
+
   $scope.handleFilterSubmit = function() {
     console.log('Filter form submitted!', $scope.searchTerm);
     $scope.filteredFishes = $scope.allFishes.filter(fish =>

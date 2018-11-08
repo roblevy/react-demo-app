@@ -1,5 +1,9 @@
 <h1 class="title is-1">All the fish, all the time</h1>
 <section>
+  <!-- ng-if shows the div only if the function returns true -->
+  <div ng-if="isAuthenticated()">
+    <p>Welcome back {{ username }}</p>
+  </div>
   <form ng-submit="handleFilterSubmit()">
     <input type="text" class="input" ng-model="searchTerm">
     <!-- $scope.searchTerm is what the user types into this input -->
