@@ -23,5 +23,17 @@ userSchema.methods.validatePassword = function(attemptedPassword) {
 };
 // We can now do user.validatePassword()
 
+// Get all a users fish:
+userSchema.virtual('fishesCreated', {
+  ref: 'Fish',
+  localField: '_id',
+  foreignField: 'createdBy'
+});
+
+// include virtuals in res.json
+userSchema.set('toJSON', {
+  virtuals: true
+});
+
 const userModel = mongoose.model('User', userSchema);
 module.exports = userModel;

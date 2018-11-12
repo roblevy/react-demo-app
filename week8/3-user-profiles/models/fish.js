@@ -11,5 +11,20 @@ const fishSchema = mongoose.Schema({
   }
 });
 
+fishSchema.virtual('fullName')
+  .get(function() {
+    return `${this.name} (${this.latinName})`;
+  });
+
+fishSchema.virtual('firstLetter')
+  .get(function() {
+    return this.name[0];
+  });
+
+// include virtuals in res.json
+fishSchema.set('toJSON', {
+  virtuals: true
+});
+
 const fishModel = mongoose.model('Fish', fishSchema);
 module.exports = fishModel;

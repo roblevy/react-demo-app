@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const fishController = require('../controllers/fishController');
 const authController = require('../controllers/authController');
+const userController = require('../controllers/userController');
 const jwt = require('jsonwebtoken');
 
 // Check for the token:
@@ -38,5 +39,8 @@ router.route('/fishes/:id')
   .get(fishController.show)
   .put(secureRoute, fishController.update)
   .delete(secureRoute, fishController.delete);
+
+router.route('/users/:id')
+  .get(userController.show);
 
 module.exports = router;
