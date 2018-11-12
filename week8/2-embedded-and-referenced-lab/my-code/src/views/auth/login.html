@@ -1,0 +1,15 @@
+<h2 class="title is-2">Log In</h2>
+
+<form ng-submit="handleLogin()">
+  <div class="field">
+    <label class="label is-size-5" for="email">Email</label>
+    <input ng-model="user.email" class="input is-info" type="email" name="email">
+  </div>
+
+  <div class="field">
+    <label class="label is-size-5" for="password">Password</label>
+    <input ng-model="user.password" class="input is-info" type="password" name="password">
+  </div>
+
+  <button class="button is-info">Log In</button>
+</form>
