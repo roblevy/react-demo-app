@@ -13,15 +13,16 @@ function login(req, res, next) {
         // Three arguments: data to encrypt, secret, options
         const token = jwt.sign({
           username: user.username,
+          fruit: 'Banana',
           sub: user._id // jwt insists on sub here, short for 'subject'
-        }, env.secret, { expiresIn: '1h' });
+        }, env.secret, { expiresIn: '24h' });
         res.json({
-          message: `Welcome back, ${user.username}`,
+          message: `Welcome back ${user.username}`,
           token: token
         });
       } else {
         res.status(401).json({
-          message: 'Oops! Something went wrong!'
+          message: 'Not this time mateyboy'
         });
       }
     })
