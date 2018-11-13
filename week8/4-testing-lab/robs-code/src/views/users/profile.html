@@ -1,0 +1,13 @@
+<h2 class="title is-2">{{ user.username }}</h2>
+
+<h3 class="title is-3">Desserts added by {{ user.username }}</h3>
+<div class="columns">
+  <div ng-repeat="dessert in user.dessertsCreated">
+    <div class="column is-6">
+      <div class="card">
+        <img ng-src={{dessert.imageUrl}} alt={{dessert.name}}>
+        <h3 class="subtitle is-3">{{dessert.name}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
