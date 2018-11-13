@@ -1,0 +1,20 @@
+<div class="columns">
+  <div class="column is-6">
+    <img ng-src="{{ dessert.imageUrl }}" alt="{{ dessert.name }}">
+    <p>Created by {{ dessert.createdBy.username }}</p>
+    <div class="level">
+      <div class="level-left">
+        <a class="button is-rounded is-danger" ui-sref="dessertsEdit({ id: dessert._id })">Edit {{ dessert.name }}</a>
+      </div>
+      <div class="level-right">
+        <a class="button is-rounded is-danger" ng-click="handleDelete()">DELETE {{ dessert.name.toUpperCase() }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="column is-6">
+    <h2 class="title is-2">{{ dessert.name }}</h2>
+
+    <h3 class="subtitle is-3">About {{ dessert.name }}</h3>
+    <p>The {{ dessert.name.toLowerCase() }} originates from {{ dessert.countryOfOrigin }}</p>
+  </div>
+</div>
