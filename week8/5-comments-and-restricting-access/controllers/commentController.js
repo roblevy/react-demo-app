@@ -20,7 +20,7 @@ function deleteRoute(req, res, next) {
       comment.remove();
       return fish.save();
     })
-    .then(fish => Fish.populate(fish, 'comments.user'))
+    .then(fish => Fish.populate(fish, 'createdBy comments.user'))
     .then(fish => res.json(fish))
     .catch(next);
 }
