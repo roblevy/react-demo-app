@@ -13,7 +13,7 @@ function secureRoute($auth, $state, Flash) {
   }
 }
 
-function Router($stateProvider) {
+function Router($urlRouterProvider, $stateProvider) {
   $stateProvider
     .state('home', {
       templateUrl: './views/home.html',
@@ -50,6 +50,9 @@ function Router($stateProvider) {
       controller: fishesEditCtrl,
       resolve: { secureRoute }
     });
+  // NOTE: Redirect to home whenever the url is invalid.
+  //       This also adds the #! for us if it's not there!
+  $urlRouterProvider.otherwise('/');
 }
 
 export default Router;
