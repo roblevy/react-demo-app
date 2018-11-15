@@ -12,9 +12,15 @@
       <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">Log in</a>
       <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log out {{ username }}</a>
     </nav>
-    <div class="container">
-      <flash-message></flash-message>
+    <flash-message></flash-message>
+    <!-- We don't want a container on the homepage -->
+    <main class="container" ng-if="!isHomepage">
       <div ui-view></div>
-    </div>
+    </main>
+    <!-- This is so the background image can fill the screen -->
+    <div ui-view ng-if="isHomepage"></div>
+    <footer class="footer is-dark">
+      Made with ❤️ for WDI 37 by Rob Levy
+    </footer>
   </body>
 </html>
