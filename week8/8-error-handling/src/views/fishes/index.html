@@ -1,0 +1,30 @@
+<h1 class="title is-1">All the fish, all the time</h1>
+<section>
+  <!-- ng-if shows the div only if the function returns true -->
+  <div ng-if="isAuthenticated()">
+    <p>Welcome back {{ username }}</p>
+  </div>
+  <form ng-submit="handleFilterSubmit()">
+    <input type="text" class="input" ng-model="searchTerm">
+    <!-- $scope.searchTerm is what the user types into this input -->
+    <button class="button">🔎</button>
+  </form>
+  <hr>
+  <div class="columns is-multiline">
+    <!-- Don't show every fish, just the filtered ones! -->
+    <div ng-repeat="fish in filteredFishes" class="column is-4">
+      <a ui-sref="fishesShow({ id: fish._id })">
+        <div class="card">
+          <div class="card-header">
+            {{ fish.name }}
+          </div>
+          <div class="card-image">
+            <figure class="image">
+              <img ng-src="{{ fish.imageUrl }}" alt="{{ fish.name }}">
+            </figure>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

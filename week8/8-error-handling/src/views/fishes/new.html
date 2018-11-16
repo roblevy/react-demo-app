@@ -1,0 +1,33 @@
+<h1 class="title is-1">Create ye a fish</h1>
+<form ng-submit="handleSubmit()">
+  <div class="field">
+    <label class="label">Name</label>
+    <div class="control">
+      <input class="input" ng-model="fish.name" placeholder="e.g. Cod">
+    </div>
+    <!-- NOTE: Show form errors, sent by the backend! -->
+    <div class="error">{{ errors.name.message }}</div>
+  </div>
+  <div class="field">
+    <label class="label">Latin name</label>
+    <div class="control">
+      <input class="input" ng-model="fish.latinName" placeholder="e.g. Codus Largus">
+    </div>
+    <div class="error">{{ errors.latinName.message }}</div>
+  </div>
+  <div class="field">
+    <label class="label">Swim depth (m)</label>
+    <div class="control">
+      <input class="input" ng-model="fish.swimDepth" placeholder="13000h">
+    </div>
+    <div class="error">{{ errors.swimDepth.message }}</div>
+  </div>
+  <div class="field">
+    <label class="label">Image (URL)</label>
+    <div class="control">
+      <input class="input" ng-model="fish.imageUrl" placeholder="http://....">
+    </div>
+  </div>
+  <button class="button is-link">Create</button>
+</form>
+{{ fish }}
