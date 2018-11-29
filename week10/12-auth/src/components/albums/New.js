@@ -1,5 +1,4 @@
 import React from 'react';
-import { handleChange } from '../../lib/common';
 
 class NewAlbum extends React.Component {
   constructor(props) {
@@ -7,7 +6,7 @@ class NewAlbum extends React.Component {
     this.state = {};
     // Bind this in the event handlers:
     // Here (in the constructor `this` points to the component)
-    this.handleChange = handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -15,6 +14,19 @@ class NewAlbum extends React.Component {
     // Stops the form refreshing the page:
     event.preventDefault();
     console.log('Submitted form!', this.state);
+  }
+
+  handleChange({ target: { name, value }}) {
+    console.log('event.target.name is', event.target.name, this.state);
+    // ES6 destructuring:
+    // handleChange(event) {
+    // const name = event.target.name;
+    // const value = event.target.value;
+    // const [name, value] = event.target;
+    // Superadvanced ES6 destructuring:
+    // const { target: {name, value}} = event;
+    // Update state using the latest value in the input
+    this.setState({ [name]: value });
   }
 
   render() {

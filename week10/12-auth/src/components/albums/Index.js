@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import AlbumBox from './AlbumBox';
+import { decodeToken } from '../../lib/auth';
 
 class AlbumsIndex extends React.Component {
   constructor(props) {
@@ -14,8 +15,10 @@ class AlbumsIndex extends React.Component {
   }
 
   render() {
+    const username = decodeToken().username;
     return (
       <main>
+        {username && <p>Welcome back {username}</p>}
         <h1>All our albums</h1>
         <div className="index-container">
           {this.state.albums
@@ -23,7 +26,7 @@ class AlbumsIndex extends React.Component {
             this.state.albums.map(album => <AlbumBox key={album._id} album={album}/>)
             :
             <p>Loading...</p>
-          }          
+          }
         </div>
       </main>
     );
