@@ -1,0 +1,20 @@
+$box-color: #fffeff;
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  .burger-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    background-color: $box-color;
+    &:hover {
+      background-color: darken($box-color, 2%);
+    }
+  }
+}
