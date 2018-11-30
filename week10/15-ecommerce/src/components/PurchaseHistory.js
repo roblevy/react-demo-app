@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import moment from 'moment';
 import { getToken } from '../lib/auth';
 
 class PurchaseHistory extends React.Component {
@@ -27,6 +28,7 @@ class PurchaseHistory extends React.Component {
               <p>Per unit £{purchase.price}</p>
               <p>{purchase.quantity}</p>
               <p>Total £{purchase.totalPrice}</p>
+              <p>{moment(purchase.createdAt).fromNow()}</p>
             </div>
           )
         }

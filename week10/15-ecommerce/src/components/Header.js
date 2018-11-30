@@ -21,14 +21,13 @@ class Header extends React.Component {
           {isAuthenticated() && <p>Welcome back! {decodeToken().username}</p>}
         </div>
         <div className="navbar-end">
-          <Link className="navbar-item" to={'/'}>Home</Link>
-          <Link className="navbar-item" to={'/burgers'}>All the Burgers</Link>
+          <Link className="navbar-item" to="/">Home</Link>
+          <Link className="navbar-item" to="/burgers">All the Burgers</Link>
           <Link className="navbar-item" to='/burgers/new'>Add a Burger</Link>
-          {isAuthenticated()
-            ?
-            <a onClick={this.handleLogout} className="navbar-item" to='/logout'>Log Out</a>
-            :
-            <Link className="navbar-item" to='/login'>Log In</Link>}
+          {isAuthenticated() && <Link className="navbar-item" to="/purchases">Purchase history</Link>}
+          {isAuthenticated() && <Link className="navbar-item" to="/basket">Basket</Link>}
+          {isAuthenticated() && <a onClick={this.handleLogout} className="navbar-item">Log Out</a>}
+          {!isAuthenticated() && <Link className="navbar-item" to="/login">Log In</Link>}
         </div>
       </nav>
     );

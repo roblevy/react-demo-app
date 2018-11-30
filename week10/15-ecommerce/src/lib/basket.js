@@ -52,7 +52,6 @@ export function totalBasketPrice() {
 }
 
 export function checkout() {
-  console.log('Checking out');
   axios.post('/api/checkout', getBasket(), {
     headers: { Authorization: `Bearer ${getToken()}` }
   })
