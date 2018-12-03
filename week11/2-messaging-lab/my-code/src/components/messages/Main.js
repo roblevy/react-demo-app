@@ -17,13 +17,18 @@ class Messages extends React.Component {
     this.setState({ user: user });
   }
 
+  componentDidMount() {
+    axios.get('/api/messages', authorizationHeader())
+      .then(result => this.setState({ messages: result.data }));
+  }
+
   render() {
     return(
       <main>
         <h1 className="title is-2">Messages</h1>
         <div className="message-container">
           <div className="sidebar">
-            <Sidebar handleClick={this.chooseConversation}/>
+            <Sidebar messages={this.state.messages} handleClick={this.chooseConversation}/>
           </div>
           <div className="messages-main">
             <div className="conversation">
