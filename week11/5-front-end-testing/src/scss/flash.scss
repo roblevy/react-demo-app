@@ -1,0 +1,21 @@
+.flash-container {
+  position: relative;
+  width: 30%;
+  margin: 0 auto;
+  .notification {
+    position: absolute;
+    animation: slidein 0.5s linear;
+    z-index: 2;
+    margin: 0 auto;
+  }
+}
+
+
+@keyframes slidein {
+  from {
+    top: -200px;
+  }
+  to {
+    top: 0;
+  }
+}
