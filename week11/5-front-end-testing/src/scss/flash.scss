@@ -4,7 +4,7 @@
   margin: 0 auto;
   .notification {
     position: absolute;
-    animation: slidein 0.5s linear;
+    animation: slidein 3s linear;
     z-index: 2;
     margin: 0 auto;
   }
@@ -13,9 +13,15 @@
 
 @keyframes slidein {
   from {
-    top: -200px;
+    top: -100px;
+  }
+  15% {
+    top: 0;
+  }
+  85% {
+    top: 0;
   }
   to {
-    top: 0;
+    top: -100px;
   }
 }
