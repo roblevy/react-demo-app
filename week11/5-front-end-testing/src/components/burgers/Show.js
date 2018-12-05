@@ -19,12 +19,10 @@ export default class BurgerShow extends React.Component {
     axios.get(`/api/burgers/${this.props.match.params.id}`)
       .then(res => {
         this.setState({ burger: res.data });
-        console.log('We have', this.state.burger);
       });
   }
 
   handleClick() {
-    console.log(this.state);
     addItem(this.state.burger, parseInt(this.state.quantity));
     this.props.history.push('/basket');
   }

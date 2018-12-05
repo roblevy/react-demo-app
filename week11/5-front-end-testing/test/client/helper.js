@@ -5,8 +5,8 @@ process.env.NODE_ENV = 'test';
 // to ES5. This makes sure that jsx (<BurgersIndex /> etc.)
 // is converted to React.createElement(...)
 // https://babeljs.io/docs/en/babel-register
-require('babel-register')();
-
+require('@babel/register')();
+require('@babel/polyfill');
 // =========================================================
 // This section ensures that requies involving static files,
 // like css and images are just ignored
@@ -41,7 +41,9 @@ configure({ adapter: new Adapter() });
 // So we create dummy versions of these things later...
 const { JSDOM } = require('jsdom');
 
-const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
+const jsdom = new JSDOM('<!doctype html><html><body></body></html>', {
+  url: 'http://localhost:8000/'
+});
 const { window } = jsdom;
 
 window.localStorage = (function(){
@@ -59,6 +61,7 @@ window.localStorage = (function(){
     }
   };
 })();
+global.localStorage = window.localStorage;
 
 
 function copyProps(src, target) {
